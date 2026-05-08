@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #001e40;
+  --color-secondary-container: #fdc003;
+  --color-background: #f8f9fa;
+  --color-on-background: #191c1d;
+  --color-surface-container-lowest: #ffffff;
+  --color-outline-variant: #c3c6d1;
+  --font-headline-lg: "Manrope", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+}
+
+
+
+body {
+  @apply bg-background text-on-background font-body-md;
+}
