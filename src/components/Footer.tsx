@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
+    <footer className="bg-blue-200 dark:bg-blue-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
       {/* Main Footer */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-16 px-8 max-w-7xl mx-auto text-sm leading-relaxed">
         
@@ -69,14 +69,14 @@ export default function Footer() {
             ].map((campus, index) => (
               <div
                 key={index}
-                className="flex items-start space-x-2"
+                className="flex items-start space-x-4"
               >
                 <MapPin
                   size={18}
-                  className="text-blue-500 mt-1 shrink-0"
+                  className="text-yellow-500 mt-1 shrink-0"
                 />
 
-                <p className="text-slate-500 dark:text-slate-400">
+                <p className="text-slate-500 dark:text-slate-400 ">
                   <span className="font-bold text-slate-800 dark:text-white">
                     Kampus {index + 1}:
                   </span>{" "}

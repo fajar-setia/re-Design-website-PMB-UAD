@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap');
+
 @import "tailwindcss";
 
 @theme {
@@ -11,7 +13,15 @@
   --font-body-md: "Inter", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
+html,
+body,
+#root {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
 
 body {
   @apply bg-background text-on-background font-body-md;

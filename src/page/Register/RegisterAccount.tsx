@@ -1,6 +1,6 @@
-import ContentLogin from "../assets/content/contentLogin.png";
+import ContentLogin from "../../assets/content/contentLogin.png";
 
-export default function Home() {
+export default function RegisterAccount() {
   return (
     <main className="flex-grow flex items-center justify-center py-10 px-4">
       
@@ -14,6 +14,52 @@ export default function Home() {
       >
 
         {/* LEFT */}
+        <div className="w-full flex justify-center">
+
+          <div
+            className="
+              relative
+              w-full
+              max-w-xl
+              h-[600px]
+
+              rounded-2xl
+              overflow-hidden
+
+              shadow-2xl
+            "
+          >
+
+            <img
+              src={ContentLogin}
+              alt="Campus"
+              className="
+                absolute inset-0
+                w-full h-full
+                object-cover
+              "
+            />
+
+            {/* Overlay */}
+            {/* <div className="absolute inset-0 bg-black/30" /> */}
+
+            {/* Text */}
+            {/* <div className="absolute bottom-10 left-10 text-white">
+              
+              <h2 className="text-3xl font-bold mb-3">
+                Wujudkan Masa Depan
+              </h2>
+
+              <p className="text-white/80 max-w-sm leading-relaxed">
+                Bergabung bersama Universitas Ahmad Dahlan
+                dan raih pendidikan terbaik untuk masa depanmu.
+              </p>
+
+            </div> */}
+          </div>
+        </div>
+
+        {/* RIGHT */}
         <div className="w-full flex justify-center">
           
           <div
@@ -143,7 +189,7 @@ export default function Home() {
               Belum punya akun?{" "}
 
               <a
-                href="/register"
+                href="#"
                 className="text-yellow-500 font-bold hover:text-yellow-600"
               >
                 DAFTAR
@@ -153,51 +199,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* RIGHT */}
-        <div className="w-full flex justify-center">
-
-          <div
-            className="
-              relative
-              w-full
-              max-w-xl
-              h-[600px]
-
-              rounded-2xl
-              overflow-hidden
-
-              shadow-2xl
-            "
-          >
-
-            <img
-              src={ContentLogin}
-              alt="Campus"
-              className="
-                absolute inset-0
-                w-full h-full
-                object-cover
-              "
-            />
-
-            {/* Overlay */}
-            {/* <div className="absolute inset-0 bg-black/30" /> */}
-
-            {/* Text */}
-            {/* <div className="absolute bottom-10 left-10 text-white">
-              
-              <h2 className="text-3xl font-bold mb-3">
-                Wujudkan Masa Depan
-              </h2>
-
-              <p className="text-white/80 max-w-sm leading-relaxed">
-                Bergabung bersama Universitas Ahmad Dahlan
-                dan raih pendidikan terbaik untuk masa depanmu.
-              </p>
-
-            </div> */}
-          </div>
-        </div>
+        
 
       </div>
     </main>
