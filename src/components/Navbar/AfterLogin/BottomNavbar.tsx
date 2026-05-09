@@ -5,23 +5,29 @@ type BottomNavbarProps = {
   onOpenMobile: () => void;
 };
 
-export default function BottomNavbar({ onOpenMobile }: BottomNavbarProps) {
+export default function BottomNavbar({
+  onOpenMobile,
+}: BottomNavbarProps) {
   const navLinks = [
     {
       label: "Home",
-      to: "/",
+      to: "/Dashboard",
     },
     {
       label: "Pendaftaran",
       to: "/pendaftaran",
     },
     {
-      label: "Jalur Masuk",
-      to: "/GetIn",
+      label: "Upload Berkas",
+      to: "/Upload",
     },
     {
-      label: "Informasi PMB",
-      to: "http://pmb.uad.ac.id/",
+      label: "MBKM",
+      to: "/MBKM",
+    },
+    {
+      label: "Hasil Seleksi",
+      to: "/Result",
     },
   ];
 
@@ -76,7 +82,9 @@ export default function BottomNavbar({ onOpenMobile }: BottomNavbarProps) {
           >
             {navLinks.map((link) => {
               const isHome =
-                link.to === "/" && (location.pathname === "/" || location.pathname === "/register");
+                link.to === "/" &&
+                (location.pathname === "/" ||
+                  location.pathname === "/register");
 
               return (
                 <NavLink
@@ -85,7 +93,7 @@ export default function BottomNavbar({ onOpenMobile }: BottomNavbarProps) {
                   end={link.to === "/" ? true : false}
                   className={({ isActive }) => `
                     relative
-                    min-w-[140px]
+                    min-w-[170px]
                     text-center
                     px-5 py-2.5
                     rounded-xl
@@ -117,65 +125,6 @@ export default function BottomNavbar({ onOpenMobile }: BottomNavbarProps) {
 
         {/* RIGHT */}
         <div className="flex items-center justify-end gap-3">
-          {/* LOGIN */}
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) => `
-              hidden md:inline-flex
-              items-center justify-center
-              h-11 px-5
-              rounded-xl
-              text-sm font-semibold
-              transition-all duration-200
-
-              ${
-                isActive && location.pathname !== "/register"
-                  ? `
-                    bg-blue-800
-                    text-white
-                    shadow-md
-                  `
-                  : `
-                    text-slate-600
-                    hover:text-blue-900
-                    hover:bg-white
-                  `
-              }
-            `}
-          >
-            Login
-          </NavLink>
-
-          {/* REGISTER */}
-          <NavLink
-            to="/register"
-            className={({ isActive }) => `
-              hidden md:inline-flex
-              items-center justify-center
-              h-11 px-5
-              rounded-xl
-              text-sm font-semibold
-              transition-all duration-200
-
-              ${
-                isActive
-                  ? `
-                    bg-blue-800
-                    text-white
-                    shadow-md
-                  `
-                  : `
-                    text-slate-600
-                    hover:text-blue-900
-                    hover:bg-white
-                  `
-              }
-            `}
-          >
-            Daftar
-          </NavLink>
-
           {/* MOBILE BUTTON */}
           <button
             onClick={onOpenMobile}
