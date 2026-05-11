@@ -1,15 +1,18 @@
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import type { ReactNode } from "react";
 import Navbar from "../components/Navbar/AfterLogin/Navbar";
 import Footer from "../components/Footer";
 
-export default function MainLayout() {
-    return (
-        <div className="min-h-screen flex flex-col">
-            <Navbar/>
-            <main className="flex-grow">
-                <Outlet/>
-            </main>
-            <Footer/>
-        </div>
-    );
+type AuthLayoutProps = {
+  children?: ReactNode;
+};
+
+export default function AuthLayout({ children }: AuthLayoutProps) {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-grow">{children ?? <Outlet />}</main>
+      <Footer />
+    </div>
+  );
 }

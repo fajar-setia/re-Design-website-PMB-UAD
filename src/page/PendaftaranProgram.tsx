@@ -1,3 +1,4 @@
+import  { useState } from "react";
 import {
   GraduationCap,
   BookOpen,
@@ -6,272 +7,178 @@ import {
   Globe,
   Users,
   School,
-  Briefcase,
   ChevronRight,
-  CheckCircle,
-  HelpCircle,
-  MessageSquare,
- 
+  Search,
+  Home,
 } from "lucide-react";
 
 export default function PendaftaranProgram() {
+  const [searchQuery, setSearchQuery] = useState("");
+
   const programs = [
     {
       title: "SARJANA & SARJANA TERAPAN",
       desc: "Program Diploma 4 dan Strata 1 untuk lulusan SMA/SMK/MA sederajat.",
       total: "84 Program Studi",
       icon: GraduationCap,
-      bg: "bg-blue-900",
-      text: "text-white",
-      sub: "text-blue-100",
-      bigIcon: School,
+      accent: "bg-blue-500",
+      status: "Pendaftaran Dibuka",
     },
     {
       title: "MAGISTER",
-      desc: "Program Strata 2 untuk pendalaman keahlian spesifik.",
+      desc: "Program Strata 2 untuk pendalaman keahlian spesifik bagi profesional.",
       total: "15 Program Studi",
       icon: BookOpen,
-      bg: "bg-slate-800",
-      text: "text-white",
-      sub: "text-slate-300",
-      bigIcon: BookOpen,
+      accent: "bg-slate-700",
+      status: "Pendaftaran Dibuka",
     },
     {
       title: "DOKTOR",
-      desc: "Jenjang pendidikan tertinggi Strata 3 untuk riset lanjutan.",
+      desc: "Jenjang pendidikan tertinggi Strata 3 fokus pada riset lanjutan.",
       total: "3 Program Studi",
       icon: Atom,
-      bg: "bg-yellow-500",
-      text: "text-white",
-      sub: "text-yellow-100",
-      bigIcon: Atom,
+      accent: "bg-amber-500",
+      status: "Seleksi Berjalan",
     },
     {
       title: "PROFESI",
-      desc: "Pendidikan lanjutan untuk mendapatkan gelar profesi.",
-      total: "Daftar Sekarang",
+      desc: "Pendidikan lanjutan khusus untuk mendapatkan gelar sertifikasi profesi.",
+      total: "8 Program Studi",
       icon: Stethoscope,
-      bg: "bg-emerald-300",
-      text: "text-white",
-      sub: "text-white",
-      bigIcon: Briefcase,
-      border: true,
+      accent: "bg-emerald-500",
+      status: "Tersedia",
     },
     {
       title: "INTERNASIONAL",
-      desc: "Program kelas internasional dengan kurikulum global.",
-      total: "International Classes",
+      desc: "Program kelas internasional dengan kurikulum dan relasi global.",
+      total: "6 International Classes",
       icon: Globe,
-      bg: "bg-rose-500",
-      text: "text-white",
-      sub: "text-white",
-      bigIcon: Globe,
-      border: true,
+      accent: "bg-rose-500",
+      status: "Pendaftaran Dibuka",
     },
     {
       title: "PROGRAM MBKM",
-      desc: "Merdeka Belajar Kampus Merdeka.",
-      total: "Explorasi MBKM",
+      desc: "Program Merdeka Belajar Kampus Merdeka untuk eksplorasi luar kampus.",
+      total: "Berbagai Batch",
       icon: Users,
-      bg: "bg-cyan-500",
-      text: "text-white",
-      sub: "text-white",
-      bigIcon: Users,
-      border: true,
-    },
-  ];
-
-  const stats = [
-    { number: "15.000+", label: "Mahasiswa Aktif", icon: Users },
-    { number: "84", label: "Program Studi", icon: School },
-    { number: "98%", label: "Alumni Bekerja", icon: Briefcase },
-    { number: "50+", label: "Kerjasama Internasional", icon: Globe },
-  ];
-
-  const timeline = [
-    {
-      step: "1",
-      title: "Daftar Online",
-      desc: "Isi formulir pendaftaran melalui portal PMB.",
-      icon: CheckCircle,
-    },
-    {
-      step: "2",
-      title: "Ujian Masuk",
-      desc: "Ikuti ujian seleksi atau UTBK.",
-      icon: HelpCircle,
-    },
-    {
-      step: "3",
-      title: "Pengumuman",
-      desc: "Cek hasil seleksi.",
-      icon: MessageSquare,
-    },
-    {
-      step: "4",
-      title: "Daftar Ulang",
-      desc: "Registrasi ulang.",
-      icon: CheckCircle,
-    },
-  ];
-
-  const faqs = [
-    {
-      q: "Apa saja jalur masuk?",
-      a: "PMDK, UTBK, dan Ujian Tulis.",
-    },
-    {
-      q: "Biaya pendaftaran?",
-      a: "Tergantung jalur masuk.",
-    },
-    {
-      q: "Ada beasiswa?",
-      a: "Ada KIP-K dan beasiswa prestasi.",
-    },
-    {
-      q: "Kapan dibuka?",
-      a: "Januari - Juli.",
+      accent: "bg-cyan-500",
+      status: "Aktif",
     },
   ];
 
   return (
-    <main className="bg-slate-50 min-h-screen pt-10 pb-10 ">
+    <main className="bg-slate-50 min-h-screen pb-20">
+      
+      {/* HERO SECTION */}
+      <section className="bg-white border-b border-slate-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 py-8">
+          
+          {/* BREADCRUMBS */}
+          <nav className="flex items-center gap-2 text-xs font-medium text-slate-400 mb-6 uppercase tracking-wider">
+            <Home className="w-3 h-3" />
+            <span>Beranda</span>
+            <ChevronRight className="w-3 h-3" />
+            <span className="text-blue-600">Pendaftaran</span>
+            <ChevronRight className="w-3 h-3" />
+            <span className="text-slate-500">Jenjang Program</span>
+          </nav>
 
-      {/* HERO */}
-      <section className="max-w-5xl mx-auto  px-6 py-6 grid lg:grid-cols-1 items-center bg-white shadow-xl shadow-black/10 rounded-3xl">
-
-        <div className="flex items-center gap-3 mb-6">
-              <div
-                className="
-                  w-12 h-12
-                  rounded-2xl
-                  bg-blue-100
-                  flex items-center justify-center
-                  text-2xl
-                "
-              >
-                <GraduationCap className="w-6 h-6 text-blue-900" />
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-bold text-blue-900">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-200">
+                  <GraduationCap className="w-6 h-6" />
+                </div>
+                <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">
                   Jenjang Program Studi
-                </h2>
+                </h1>
               </div>
+              <p className="text-slate-500 leading-relaxed">
+                Pilih masa depanmu di Universitas Ahmad Dahlan. Temukan program studi yang sesuai dengan passion dan rencana karir Anda di masa depan.
+              </p>
             </div>
 
-            <div
-              className="
-                bg-blue-50
-                border border-blue-100
-                rounded-2xl
-                p-6
-                mb-8
-              "
-            >
-              <p className="text-slate-700 leading-relaxed mb-4 font-bold text-lg">
-                Selamat datang Dahlan Muda 👋
-              </p>
+            {/* SEARCH BAR */}
+            <div className="relative w-full md:w-80 group">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
+              <input 
+                type="text" 
+                placeholder="Cari program studi..."
+                className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div
-                className="
-                  bg-white
-                  rounded-xl
-                  border border-blue-100
-                  p-4
-                  text-sm text-slate-600
-                "
+      {/* PROGRAM GRID SECTION */}
+      <section className="max-w-7xl mx-auto px-6 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {programs.map((p, i) => {
+            const Icon = p.icon;
+
+            return (
+              <div 
+                key={i} 
+                className="group relative bg-white/70 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2rem] p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-900/5 overflow-hidden"
               >
-                Berikut ini adalah pilihan{" "}
-                <span className="font-bold text-blue-900">
-                  Jenjang Program Studi
-                </span>{" "}
-                yang tersedia dan.{" "}
-                <br />
-                <span className="font-bold text-blue-900">
-                  Program Studi
-                </span>{" "}
-                yang ditawarkan di Universitas Ahmad Dahlan.
+                {/* GLASSMORPHISM ACCENT BORDER */}
+                <div className={`absolute top-0 left-0 w-full h-1.5 ${p.accent}`} />
+
+                {/* STATUS BADGE */}
+                <div className="absolute top-5 right-5">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-slate-100 text-slate-600 border border-slate-200 shadow-sm transition-colors group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600">
+                    {p.status}
+                  </span>
+                </div>
+                
+                {/* ICON */}
+                <div className={`w-14 h-14 rounded-2xl ${p.accent} bg-opacity-10 flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110`}>
+                  <Icon className={`w-7 h-7 text-slate-800`} />
+                </div>
+
+                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-blue-700 transition-colors">
+                  {p.title}
+                </h3>
+
+                <p className="text-sm text-slate-500 leading-relaxed mb-6">
+                  {p.desc}
+                </p>
+
+                <div className="pt-5 border-t border-slate-100 flex justify-between items-center">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Kapasitas</span>
+                    <span className="text-sm font-semibold text-slate-700">{p.total}</span>
+                  </div>
+                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 transition-all group-hover:bg-blue-600 group-hover:text-white group-hover:rotate-[-45deg]">
+                    <ChevronRight className="w-5 h-5" />
+                  </div>
+                </div>
+
+                {/* SUBTLE BACKGROUND SHAPE */}
+                <div className={`absolute -right-6 -bottom-6 w-32 h-32 ${p.accent} opacity-[0.03] rounded-full blur-3xl group-hover:opacity-10 transition-opacity`} />
               </div>
-            </div>
-
+            );
+          })}
+        </div>
       </section>
 
-      {/* PROGRAM */}
-      <section className="max-w-7xl mx-auto px-6 py-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {programs.map((p, i) => {
-          const Icon = p.icon;
-          const BigIcon = p.bigIcon;
-
-          return (
-            <div key={i} className={`p-8 rounded-3xl relative overflow-hidden ${p.bg}`}>
-              
-              <Icon className={`w-10 h-10 mb-4 ${p.text}`} />
-
-              <h3 className={`text-xl font-bold ${p.text}`}>
-                {p.title}
-              </h3>
-
-              <p className={`text-sm mt-2 ${p.sub}`}>
-                {p.desc}
-              </p>
-
-              <div className="mt-6 flex justify-between items-center">
-                <span className={`text-sm ${p.sub}`}>
-                  {p.total}
-                </span>
-                <ChevronRight className={`w-5 h-5 ${p.text}`} />
-              </div>
-
-              <BigIcon className={`absolute -right-10 -bottom-10 w-40 h-40 opacity-10 ${p.text}`} />
-
-            </div>
-          );
-        })}
+      {/* FOOTER INFO (Optional - to fill space) */}
+      <section className="max-w-7xl mx-auto px-6 mt-12">
+        <div className="bg-blue-900 rounded-[2.5rem] p-10 text-white flex flex-col md:flex-row items-center justify-between overflow-hidden relative shadow-2xl shadow-blue-900/20">
+          <div className="relative z-10">
+            <h2 className="text-2xl font-bold mb-2">Butuh bantuan memilih jurusan?</h2>
+            <p className="text-blue-100 text-sm opacity-80">Konsultasikan minat dan bakatmu dengan tim akademik kami secara gratis.</p>
+          </div>
+          <button className="relative z-10 mt-6 md:mt-0 px-8 py-4 bg-white text-blue-900 font-bold rounded-2xl hover:bg-blue-50 transition-colors shadow-lg">
+            Hubungi Konselor
+          </button>
+          <School className="absolute -right-10 -bottom-10 w-64 h-64 opacity-10 rotate-12" />
+        </div>
       </section>
-
-      {/* STATS */}
-      <section className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-6">
-        {stats.map((s, i) => {
-          const Icon = s.icon;
-
-          return (
-            <div key={i} className="bg-white p-6 rounded-2xl text-center">
-              <Icon className="w-8 h-8 mx-auto text-blue-900 mb-2" />
-              <h3 className="text-2xl font-bold">{s.number}</h3>
-              <p className="text-sm text-slate-500">{s.label}</p>
-            </div>
-          );
-        })}
-      </section>
-
-      {/* TIMELINE */}
-      <section className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-6">
-        {timeline.map((t, i) => {
-          const Icon = t.icon;
-
-          return (
-            <div key={i} className="bg-white p-6 rounded-2xl text-center">
-              <Icon className="w-8 h-8 mx-auto text-blue-900 mb-2" />
-              <h3 className="font-bold">{t.title}</h3>
-              <p className="text-sm text-slate-500">{t.desc}</p>
-            </div>
-          );
-        })}
-      </section>
-
-      {/* FAQ */}
-      <section className="max-w-3xl mx-auto px-6 py-16 space-y-4">
-        {faqs.map((f, i) => (
-          <details key={i} className="bg-white p-4 rounded-xl">
-            <summary className="font-semibold cursor-pointer">
-              {f.q}
-            </summary>
-            <p className="mt-2 text-slate-600">{f.a}</p>
-          </details>
-        ))}
-      </section>
-
+      
     </main>
   );
 }
