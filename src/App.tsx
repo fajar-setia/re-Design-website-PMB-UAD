@@ -13,6 +13,13 @@ import Dashboard from "./page/AfterLogin/Dashboard";
 import Upload from "./page/AfterLogin/Upload";
 import MBKM from "./page/AfterLogin/MBKM";
 import Result from "./page/AfterLogin/Result";
+import ProgramSarjana from "./page/AfterLogin/ProgramStudi/Sarjana/pilSarjana";
+import ProgramMagister from "./page/AfterLogin/ProgramStudi/Magister/pilMagister";
+import ProgramDoktor from "./page/AfterLogin/ProgramStudi/Doktor/pilDoktor";
+import ProgramProfesi from "./page/AfterLogin/ProgramStudi/Profesi/pilProfesi";
+
+
+import FormulirPendaftaran from "./page/AfterLogin/Form/index";
 
 function PendaftaranRoute() {
   const { isLoggedIn } = useAuth();
@@ -105,6 +112,11 @@ export default function App() {
             <Route path="/upload" element={<Upload />} />
             <Route path="/mbkm" element={<MBKM />} />
             <Route path="/result" element={<Result />} />
+            <Route path="/pil-sarjana" element={<ProgramSarjana />} />
+            <Route path="/pil-magister" element={<ProgramMagister />} />
+            <Route path="/pil-doktor" element={<ProgramDoktor />} />
+            <Route path="/pil-profesi" element={<ProgramProfesi />} />
+            <Route path="/form-pendaftaran" element={<FormulirPendaftaran />} />
           </Route>
         </Route>
       </Routes>

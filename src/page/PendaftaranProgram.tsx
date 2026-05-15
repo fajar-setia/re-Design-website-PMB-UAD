@@ -11,6 +11,7 @@ import {
   Search,
 } from "lucide-react";
 
+
 export default function PendaftaranProgram() {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -22,6 +23,7 @@ export default function PendaftaranProgram() {
       icon: GraduationCap,
       accent: "bg-blue-500",
       status: "Pendaftaran Dibuka",
+      url: "/pil-sarjana",
     },
     {
       title: "MAGISTER",
@@ -30,6 +32,7 @@ export default function PendaftaranProgram() {
       icon: BookOpen,
       accent: "bg-slate-700",
       status: "Pendaftaran Dibuka",
+      url: "/pil-magister",
     },
     {
       title: "DOKTOR",
@@ -38,6 +41,7 @@ export default function PendaftaranProgram() {
       icon: Atom,
       accent: "bg-amber-500",
       status: "Seleksi Berjalan",
+      url: "/pil-doktor",
     },
     {
       title: "PROFESI",
@@ -46,6 +50,7 @@ export default function PendaftaranProgram() {
       icon: Stethoscope,
       accent: "bg-emerald-500",
       status: "Tersedia",
+      url: "/pil-profesi",
     },
     {
       title: "INTERNASIONAL",
@@ -54,6 +59,7 @@ export default function PendaftaranProgram() {
       icon: Globe,
       accent: "bg-rose-500",
       status: "Pendaftaran Dibuka",
+      url: "#",
     },
     {
       title: "PROGRAM MBKM",
@@ -62,6 +68,7 @@ export default function PendaftaranProgram() {
       icon: Users,
       accent: "bg-cyan-500",
       status: "Aktif",
+      url: "/mbkm",
     },
   ];
 
@@ -111,6 +118,7 @@ export default function PendaftaranProgram() {
 
             return (
               <div
+                onClick={p.url ? () => window.location.href = p.url : undefined}
                 key={i}
                 className="group relative bg-white/70 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2rem] p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-900/5 overflow-hidden"
               >

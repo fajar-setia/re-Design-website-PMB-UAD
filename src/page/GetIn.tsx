@@ -1,8 +1,12 @@
 import {GraduationCap, Search } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function GetIn() {
   const [searchQuery, setSearchQuery] = useState("");
+
+  const navigate = useNavigate();
+
   const sarjanaPrograms = [
     {
       title: "Beasiswa Prodigium Fisika",
@@ -151,7 +155,10 @@ export default function GetIn() {
                   Info
                 </button>
 
-                <button className="rounded-lg bg-[#003366] py-2 text-xs font-bold uppercase text-white transition hover:opacity-90">
+                <button 
+                  className="rounded-lg bg-[#003366] py-2 text-xs font-bold uppercase text-white transition hover:opacity-90"
+                  onClick={() => navigate("/form-pendaftaran")}
+                >
                   Daftar
                 </button>
               </div>
@@ -205,7 +212,10 @@ export default function GetIn() {
                   Info
                 </button>
 
-                <button className="rounded-lg bg-[#b08b00] py-2 text-xs font-bold uppercase text-white transition hover:opacity-90">
+                <button 
+                  className="rounded-lg bg-[#b08b00] py-2 text-xs font-bold uppercase text-white transition hover:opacity-90"
+                  onClick={() => navigate("/form-pendaftaran")}
+                >
                   Daftar
                 </button>
               </div>
