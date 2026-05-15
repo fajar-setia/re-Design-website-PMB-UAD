@@ -23,7 +23,7 @@ export default function BottomNavbar({
     },
     {
       label: "MBKM",
-      to: "/MBKM",
+      to: "/mbkm",
     },
     {
       label: "Hasil Seleksi",
@@ -55,7 +55,7 @@ export default function BottomNavbar({
         {/* LEFT */}
         <div className="flex items-center">
           <Link
-            to="/"
+            to="/dashboard"
             className="
               text-xl font-extrabold
               tracking-tight
@@ -86,6 +86,10 @@ export default function BottomNavbar({
                 (location.pathname === "/" ||
                   location.pathname === "/register");
 
+              const isUploadBerkasActive =
+                link.label === "Upload Berkas" &&
+                location.pathname === "/getin";
+
               return (
                 <NavLink
                   key={link.label}
@@ -102,7 +106,7 @@ export default function BottomNavbar({
                     duration-200
 
                     ${
-                      isActive || isHome
+                      isActive || isHome || isUploadBerkasActive
                         ? `
                           bg-blue-800
                           text-white

@@ -17,7 +17,7 @@ export default function LoginForm() {
     const user = findUser(email, password);
 
     if (!user) {
-      toast.error("Email atau password salah");
+      toast.error("Email dan password salah");
       return;
     }
 

@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+import Kampus from "../../assets/Kampus-4-Universitas-Ahmad-Dahlan.png";
 export default function Dashboard() {
+  const navigate = useNavigate();
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
@@ -110,6 +113,7 @@ export default function Dashboard() {
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
 
               <button
+                  onClick={() => navigate("/pendaftaran")}
                 className="
                   h-14
                   px-8
@@ -329,7 +333,7 @@ export default function Dashboard() {
           >
 
             <img
-              src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1200&auto=format&fit=crop"
+              src={Kampus}
               alt="Campus"
               className="
                 absolute inset-0

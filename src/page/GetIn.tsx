@@ -1,4 +1,4 @@
-import { ChevronRight, GraduationCap, Home, Search } from "lucide-react";
+import {GraduationCap, Search } from "lucide-react";
 import { useState } from "react";
 
 export default function GetIn() {
@@ -70,16 +70,6 @@ export default function GetIn() {
       {/* HERO */}
       <section className="bg-white border-b border-slate-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-8">
-          {/* BREADCRUMBS */}
-          <nav className="flex items-center gap-2 text-xs font-medium text-slate-400 mb-6 uppercase tracking-wider">
-            <Home className="w-3 h-3" />
-            <span>Beranda</span>
-            <ChevronRight className="w-3 h-3" />
-            <span >Pendaftaran</span>
-            <ChevronRight className="w-3 h-3" />
-            <span className="text-blue-600">Jalur masuk</span>
-          </nav>
-
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="max-w-2xl">
               <div className="flex items-center gap-3 mb-3">

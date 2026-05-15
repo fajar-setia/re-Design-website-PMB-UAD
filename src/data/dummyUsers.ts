@@ -1,7 +1,7 @@
 export const dummyUsers = [
   {
-    email: "admin@uad.ac.id",
-    password: "123456",
+    email: "admin",
+    password: "admin",
     name: "Admin PMB",
   },
 ];
