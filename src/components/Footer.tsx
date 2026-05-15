@@ -21,6 +21,21 @@ export default function Footer() {
     "Jln. Ringroad Selatan, Yogyakarta",
   ];
 
+  const socialMedia = [
+    {
+      name: "Instagram",
+      url : "https://www.instagram.com/@pmb_uad",
+    },
+    {
+      name: "WhatsApp",
+      url : "https://linktr.ee/pmb_uad"
+    },
+    {
+      name: "TikTok",
+      url : "https://www.tiktok.com/@pmb_uad"
+    },
+  ];
+
   return (
     <footer className="bg-blue-800 text-white">
 
@@ -117,16 +132,16 @@ export default function Footer() {
       <div className="border-t border-blue-700">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-blue-300 text-xs">
-            © 2024 Universitas Ahmad Dahlan. All Rights Reserved.
+            © 2026 Universitas Ahmad Dahlan.
           </p>
           <div className="flex gap-5">
-            {["Facebook", "Instagram", "Twitter (X)", "YouTube"].map((s) => (
+            {socialMedia.map((s) => (
               <a
-                key={s}
-                href="#"
+                key={s.name}
+                href={s.url}
                 className="text-blue-300 hover:text-yellow-400 text-xs transition-colors"
               >
-                {s}
+                {s.name}
               </a>
             ))}
           </div>
