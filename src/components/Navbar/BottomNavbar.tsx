@@ -41,20 +41,22 @@ export default function BottomNavbar({ onOpenMobile }: BottomNavbarProps) {
         className="
           max-w-7xl mx-auto
           h-16
-          px-6 sm:px-8
-          grid grid-cols-3
+          px-4 sm:px-6 lg:px-8
+          flex justify-between md:grid md:grid-cols-3
           items-center
+          gap-2
         "
       >
         {/* LEFT */}
-        <div className="flex items-center">
+        <div className="flex items-center min-w-0">
           <Link
             to="/"
             className="
-              text-xl font-extrabold
+              text-lg sm:text-xl font-extrabold
               tracking-tight
               text-blue-800
               whitespace-nowrap
+              truncate
             "
           >
             PMB UAD
@@ -71,7 +73,8 @@ export default function BottomNavbar({ onOpenMobile }: BottomNavbarProps) {
           <div
             className="
               flex items-center
-              p-1.5
+              gap-0 md:gap-0.5 lg:gap-1
+              p-1
             "
           >
             {navLinks.map((link) => {
@@ -85,11 +88,12 @@ export default function BottomNavbar({ onOpenMobile }: BottomNavbarProps) {
                   end={link.to === "/" ? true : false}
                   className={({ isActive }) => `
                     relative
-                    min-w-[140px]
+                    min-w-0
                     text-center
-                    px-5 py-2.5
+                    px-2 py-2 md:px-2.5 lg:px-4
                     rounded-xl
-                    text-sm font-semibold
+                    text-xs md:text-xs lg:text-sm font-semibold
+                    whitespace-nowrap
                     transition-all
                     duration-200
 
@@ -116,7 +120,7 @@ export default function BottomNavbar({ onOpenMobile }: BottomNavbarProps) {
         </div>
 
         {/* RIGHT */}
-        <div className="flex items-center justify-end gap-3">
+        <div className="flex items-center justify-end gap-1 lg:gap-2 flex-shrink-0">
           {/* LOGIN */}
           <NavLink
             to="/"
@@ -124,9 +128,9 @@ export default function BottomNavbar({ onOpenMobile }: BottomNavbarProps) {
             className={({ isActive }) => `
               hidden md:inline-flex
               items-center justify-center
-              h-11 px-5
+              h-9 px-2.5 lg:px-4
               rounded-xl
-              text-sm font-semibold
+              text-xs lg:text-sm font-semibold
               transition-all duration-200
 
               ${
@@ -153,9 +157,9 @@ export default function BottomNavbar({ onOpenMobile }: BottomNavbarProps) {
             className={({ isActive }) => `
               hidden md:inline-flex
               items-center justify-center
-              h-11 px-5
+              h-9 px-2.5 lg:px-4
               rounded-xl
-              text-sm font-semibold
+              text-xs lg:text-sm font-semibold
               transition-all duration-200
 
               ${
@@ -187,10 +191,11 @@ export default function BottomNavbar({ onOpenMobile }: BottomNavbarProps) {
               hover:bg-slate-100
               active:scale-95
               transition-all
+              touch-manipulation
             "
             aria-label="Open menu"
           >
-            <Menu size={24} />
+            <Menu size={22} />
           </button>
         </div>
       </div>
