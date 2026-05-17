@@ -47,13 +47,13 @@ export default function BottomNavbar({
         className="
           max-w-7xl mx-auto
           h-16
-          px-6 sm:px-8
-          grid grid-cols-3
-          items-center
+          px-4 sm:px-6 lg:px-8
+          relative
+          flex items-center justify-between
         "
       >
         {/* LEFT */}
-        <div className="flex items-center">
+        <div className="flex items-center flex-shrink-0 z-10">
           <Link
             to="/dashboard"
             className="
@@ -71,13 +71,15 @@ export default function BottomNavbar({
         <div
           className="
             hidden md:flex
+            absolute left-1/2 -translate-x-1/2
             items-center justify-center
           "
         >
           <div
             className="
               flex items-center
-              p-1.5
+              gap-0
+              p-1
             "
           >
             {navLinks.map((link) => {
@@ -97,11 +99,12 @@ export default function BottomNavbar({
                   end={link.to === "/" ? true : false}
                   className={({ isActive }) => `
                     relative
-                    min-w-[170px]
+                    min-w-0
                     text-center
-                    px-5 py-2.5
+                    px-2 py-2 md:px-3 lg:px-5
                     rounded-xl
-                    text-sm font-semibold
+                    text-xs md:text-xs lg:text-sm font-semibold
+                    whitespace-nowrap
                     transition-all
                     duration-200
 
@@ -128,7 +131,7 @@ export default function BottomNavbar({
         </div>
 
         {/* RIGHT */}
-        <div className="flex items-center justify-end gap-3">
+        <div className="flex items-center justify-end flex-shrink-0 gap-3 z-10">
           {/* MOBILE BUTTON */}
           <button
             onClick={onOpenMobile}

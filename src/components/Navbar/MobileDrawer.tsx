@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { X, ChevronRight, Home, FileText, GraduationCap, Users } from "lucide-react";
 
 type MobileDrawerProps = {
@@ -8,6 +8,7 @@ type MobileDrawerProps = {
 
 export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
     { label: "Home", to: "/", icon: <Home size={18} /> },
@@ -102,17 +103,23 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
         {/* Bagian Bawah (Footer Drawer / Tombol CTA) */}
         <div className="p-4 bg-slate-50 border-t border-slate-200/60 space-y-2">
           <button 
-            onClick={onClose}
+            onClick={() => {
+              onClose();
+              navigate("/");
+            }}
             className="w-full bg-white border border-slate-200 hover:bg-slate-100 text-blue-900 font-bold py-2.5 px-4 rounded-xl text-xs transition-all shadow-sm tracking-wide"
           >
-            LOGIN
+            Login
           </button>
           <Link 
-            to="/form-pendaftaran"
-            onClick={onClose}
+            to="/register"
+            onClick={() => {
+              onClose();
+              navigate("/register");
+            }}
             className="block w-full text-center bg-amber-500 hover:bg-amber-600 active:scale-[0.98] text-white font-bold py-2.5 px-4 rounded-xl text-xs transition-all shadow-md shadow-amber-500/10 tracking-wide"
           >
-            APPLY NOW
+            Daftar Akun
           </Link>
           
           <div className="pt-2 text-center">
