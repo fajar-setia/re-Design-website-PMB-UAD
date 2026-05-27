@@ -12,8 +12,11 @@ import {
   Circle,
   Save,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function FormPendaftaran() {
+
+  const navigate = useNavigate();
   return (
     <main className="max-w-[1280px] mx-auto px-4 md:px-10 py-12">
       {/* Header Section */}
@@ -21,18 +24,22 @@ export default function FormPendaftaran() {
         <nav aria-label="Breadcrumb" className="flex text-sm text-[#43474f] mb-4">
           <ol className="flex items-center space-x-2">
             <li>
-              <a className="hover:text-[#001e40] flex items-center gap-1" href="#">
+              <a className="text-slate-600 font-semibold flex items-center gap-1" href="#">
                 <Home size={14} />
                 Home
               </a>
             </li>
             <li><ChevronRight size={14} /></li>
-            <li><span className="text-[#001e40] font-semibold">Pendaftaran Online</span></li>
+            <li><span className="text-blue-800 font-semibold">Tahap 1 Biodata</span></li>
+            <li><ChevronRight size={14} /></li>
+            <li><span className="text-slate-600 font-semibold">Tahap 2 Syarat Jalur</span></li>
+            <li><ChevronRight size={14} /></li>
+            <li><span className="text-slate-600 font-semibold">Tahap 3 Upload Berkas</span></li>
           </ol>
         </nav>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <h1 className="font-['Manrope'] text-[40px] leading-[48px] font-bold text-[#001e40] mb-2">
+            <h1 className="text-[40px] leading-[48px] font-bold text-blue-800 mb-2">
               Form Pendaftaran Online
             </h1>
             <p className="text-[18px] leading-[28px] text-[#43474f] max-w-2xl">
@@ -49,7 +56,7 @@ export default function FormPendaftaran() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
         {/* Left Side: Registration Info & Stepper */}
-        <div className="lg:col-span-4 space-y-6">
+        <aside className="lg:col-span-4 space-y-6">
           {/* Stepper Card */}
           <div className="bg-white p-8 rounded-xl border border-[#c3c6d1] shadow-sm">
             <h3 className="font-['Manrope'] text-2xl font-bold text-[#001e40] mb-8">
@@ -121,7 +128,7 @@ export default function FormPendaftaran() {
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsYweQApbk9Tx_ValDvD02-wIoucQcBDPS6mBEC4XQ7oEiWq4JEPgixscyJaLY08k8r4stWugudEmQIw7phfjH3j378fZZbkvIe5averVK_6Il7PpCzFCzqBDJh2M1w6ioy8ztdAHH4YWUR4gfi1NDNPYV3KqSCcALGLbKkIXhefR8s4n4MghxTS00hu-VBFl1f1prnbodKvP9EDgsKzI1ZkfBc-nXvp6redoGCI-V7bIASojYsp47ZEhgDIQCO4eVdFNM2K-UzIWB"
             />
           </div>
-        </div>
+        </aside>
 
         {/* Right Side: Form Container */}
         <div className="lg:col-span-8">
@@ -470,6 +477,7 @@ export default function FormPendaftaran() {
                     Simpan Draft
                   </button>
                   <button
+                    onClick={() => navigate('/syarat')}
                     className="flex items-center gap-2 px-8 py-3 bg-[#001e40] text-white rounded-lg text-sm font-semibold hover:bg-[#003366] transition-all active:scale-95 shadow-md w-full sm:w-auto justify-center"
                     type="submit"
                   >
