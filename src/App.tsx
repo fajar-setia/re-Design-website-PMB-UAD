@@ -21,6 +21,7 @@ import ProgramProfesi from "./page/AfterLogin/ProgramStudi/Profesi/pilProfesi";
 
 import FormulirPendaftaran from "./page/AfterLogin/Form/index";
 import SyaratJalur from "./page/AfterLogin/Form/syarat";
+import Tahap3 from "./page/AfterLogin/Form/tahap3";
 
 function PendaftaranRoute() {
   const { isLoggedIn } = useAuth();
@@ -119,6 +120,7 @@ export default function App() {
             <Route path="/pil-profesi" element={<ProgramProfesi />} />
             <Route path="/form-pendaftaran" element={<FormulirPendaftaran />} />
             <Route path="/syarat" element={<SyaratJalur />} />
+            <Route path="/upload-berkas" element={<Tahap3 />} />
           </Route>
         </Route>
       </Routes>

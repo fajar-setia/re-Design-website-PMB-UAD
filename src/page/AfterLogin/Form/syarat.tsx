@@ -350,7 +350,8 @@ export default function SyaratJalur() {
                 </button>
 
                 <button
-                  type="submit"
+                  onClick={() => navigate("/upload-berkas")}
+                  type="button"
                   className="px-8 py-3 rounded-full bg-[#001e40] text-white font-bold hover:opacity-90 transition"
                 >
                   Selanjutnya

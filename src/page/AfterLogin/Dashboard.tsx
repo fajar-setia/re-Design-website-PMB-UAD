@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Kampus from "../../assets/Kampus-4-Universitas-Ahmad-Dahlan.png";
+import { getPendaftar } from "../../data/statistik";
 export default function Dashboard() {
   const navigate = useNavigate();
   return (
@@ -206,6 +207,74 @@ export default function Dashboard() {
             </div>
 
           </div>
+
+          {/* STATISTIK PENDAFTAR */}
+          <section
+            className="
+              bg-white
+              border border-slate-200
+              rounded-3xl
+              p-8
+              shadow-sm
+            "
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div
+                className="
+                  w-12 h-12
+                  rounded-2xl
+                  bg-green-100
+                  flex items-center justify-center
+                  text-2xl
+                "
+              >
+                📊
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-blue-900">
+                  Statistik Pendaftaran
+                </h2>
+                <p className="text-slate-500 text-sm">
+                  Data pendaftar yang telah mengisi formulir
+                </p>
+              </div>
+            </div>
+
+            {getPendaftar().length === 0 ? (
+              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center">
+                <p className="text-slate-500">Belum ada data pendaftaran.</p>
+              </div>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-slate-200">
+                      <th className="py-3 px-2 font-semibold text-slate-600">ID</th>
+                      <th className="py-3 px-2 font-semibold text-slate-600">Nama</th>
+                      <th className="py-3 px-2 font-semibold text-slate-600">Email</th>
+                      <th className="py-3 px-2 font-semibold text-slate-600">Prodi 1</th>
+                      <th className="py-3 px-2 font-semibold text-slate-600">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {getPendaftar().map((p) => (
+                      <tr key={p.id} className="border-b border-slate-100 hover:bg-slate-50">
+                        <td className="py-3 px-2 font-medium text-slate-700">{p.id}</td>
+                        <td className="py-3 px-2 text-slate-600">{p.nama}</td>
+                        <td className="py-3 px-2 text-slate-600">{p.email}</td>
+                        <td className="py-3 px-2 text-slate-600">{p.prodiPilihan1}</td>
+                        <td className="py-3 px-2">
+                          <span className="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">
+                            Selesai
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </section>
         </div>
 
         {/* RIGHT */}
