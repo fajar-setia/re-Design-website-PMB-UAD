@@ -10,6 +10,10 @@ export default function Tahap3() {
     simpanPendaftar({
       nama: "coba",
       email: "atmin@gmail.com",
+      jalur: "PMDK-Rapor",
+      tahunAkademik: "2026 Semester Gasal",
+      gelombang: "Gelombang 2",
+      tahap: "Tahap 1",
       prodiPilihan1: "Informatika",
       prodiPilihan2: "Sistem Informasi",
       jurusan: "SMA - IPA",

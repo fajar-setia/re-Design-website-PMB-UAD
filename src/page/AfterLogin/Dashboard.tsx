@@ -1,22 +1,17 @@
 import { useNavigate } from "react-router-dom";
+import { AlertTriangle } from "lucide-react";
 import Kampus from "../../assets/Kampus-4-Universitas-Ahmad-Dahlan.png";
 import { getPendaftar } from "../../data/statistik";
 export default function Dashboard() {
   const navigate = useNavigate();
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-
       {/* HEADER */}
       <div className="mb-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5">
-
         <div>
-          <h1 className="text-4xl font-extrabold text-blue-900 mb-2">
-            PMB Online
-          </h1>
+          <h1 className="text-4xl font-extrabold text-blue-900 mb-2">PMB Online</h1>
 
-          <p className="text-slate-500 text-lg">
-            Data Pendaftar Mahasiswa Baru UAD
-          </p>
+          <p className="text-slate-500 text-lg">Data Pendaftar Mahasiswa Baru UAD</p>
         </div>
 
         <div
@@ -37,10 +32,8 @@ export default function Dashboard() {
 
       {/* GRID */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
         {/* LEFT */}
         <div className="lg:col-span-8 space-y-6">
-
           {/* MAIN CARD */}
           <section
             className="
@@ -51,7 +44,6 @@ export default function Dashboard() {
               shadow-sm
             "
           >
-
             {/* TITLE */}
             <div className="flex items-center gap-3 mb-6">
               <div
@@ -67,13 +59,9 @@ export default function Dashboard() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-blue-900">
-                  Data Pendaftaran
-                </h2>
+                <h2 className="text-2xl font-bold text-blue-900">Data Pendaftaran</h2>
 
-                <p className="text-slate-500 text-sm">
-                  Lengkapi formulir PMB Anda
-                </p>
+                <p className="text-slate-500 text-sm">Lengkapi formulir PMB Anda</p>
               </div>
             </div>
 
@@ -88,9 +76,8 @@ export default function Dashboard() {
               "
             >
               <p className="text-slate-700 leading-relaxed mb-4">
-                Selamat datang Dahlan Muda 👋
-                Silakan lanjut melengkapi formulir pendaftaran
-                untuk melanjutkan proses PMB Universitas Ahmad Dahlan.
+                Selamat datang Dahlan Muda 👋 Silakan lanjut melengkapi formulir pendaftaran untuk
+                melanjutkan proses PMB Universitas Ahmad Dahlan.
               </p>
 
               <div
@@ -102,19 +89,15 @@ export default function Dashboard() {
                   text-sm text-slate-600
                 "
               >
-                Klik tombol{" "}
-                <span className="font-bold text-blue-900">
-                  Isi Formulir
-                </span>{" "}
-                untuk mulai mengisi data pendaftaran Anda.
+                Klik tombol <span className="font-bold text-blue-900">Isi Formulir</span> untuk
+                mulai mengisi data pendaftaran Anda.
               </div>
             </div>
 
             {/* BUTTON */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-
               <button
-                  onClick={() => navigate("/pendaftaran")}
+                onClick={() => navigate("/pendaftaran")}
                 className="
                   h-14
                   px-8
@@ -133,15 +116,12 @@ export default function Dashboard() {
                 ISI FORMULIR
               </button>
 
-              <p className="text-sm text-slate-500">
-                *Pastikan semua data sudah benar.
-              </p>
+              <p className="text-sm text-slate-500">*Pastikan semua data sudah benar.</p>
             </div>
           </section>
 
           {/* SMALL CARDS */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
             {/* CARD 1 */}
             <div
               className="
@@ -164,13 +144,10 @@ export default function Dashboard() {
                 ✅
               </div>
 
-              <h3 className="font-bold text-lg mb-2">
-                Verifikasi Berkas
-              </h3>
+              <h3 className="font-bold text-lg mb-2">Verifikasi Berkas</h3>
 
               <p className="text-sm text-blue-100 leading-relaxed">
-                Proses validasi dokumen membutuhkan
-                waktu 2–3 hari kerja.
+                Proses validasi dokumen membutuhkan waktu 2–3 hari kerja.
               </p>
             </div>
 
@@ -196,16 +173,12 @@ export default function Dashboard() {
                 💬
               </div>
 
-              <h3 className="font-bold text-lg mb-2">
-                Butuh Bantuan?
-              </h3>
+              <h3 className="font-bold text-lg mb-2">Butuh Bantuan?</h3>
 
               <p className="text-sm leading-relaxed">
-                Hubungi helpdesk PMB untuk bantuan
-                teknis maupun informasi pendaftaran.
+                Hubungi helpdesk PMB untuk bantuan teknis maupun informasi pendaftaran.
               </p>
             </div>
-
           </div>
 
           {/* STATISTIK PENDAFTAR */}
@@ -231,12 +204,8 @@ export default function Dashboard() {
                 📊
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-blue-900">
-                  Statistik Pendaftaran
-                </h2>
-                <p className="text-slate-500 text-sm">
-                  Data pendaftar yang telah mengisi formulir
-                </p>
+                <h2 className="text-2xl font-bold text-blue-900">Statistik Pendaftaran</h2>
+                <p className="text-slate-500 text-sm">Data pendaftar yang telah mengisi formulir</p>
               </div>
             </div>
 
@@ -245,33 +214,217 @@ export default function Dashboard() {
                 <p className="text-slate-500">Belum ada data pendaftaran.</p>
               </div>
             ) : (
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm text-left border-collapse">
-                  <thead>
-                    <tr className="border-b border-slate-200">
-                      <th className="py-3 px-2 font-semibold text-slate-600">ID</th>
-                      <th className="py-3 px-2 font-semibold text-slate-600">Nama</th>
-                      <th className="py-3 px-2 font-semibold text-slate-600">Email</th>
-                      <th className="py-3 px-2 font-semibold text-slate-600">Prodi 1</th>
-                      <th className="py-3 px-2 font-semibold text-slate-600">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {getPendaftar().map((p) => (
-                      <tr key={p.id} className="border-b border-slate-100 hover:bg-slate-50">
-                        <td className="py-3 px-2 font-medium text-slate-700">{p.id}</td>
-                        <td className="py-3 px-2 text-slate-600">{p.nama}</td>
-                        <td className="py-3 px-2 text-slate-600">{p.email}</td>
-                        <td className="py-3 px-2 text-slate-600">{p.prodiPilihan1}</td>
-                        <td className="py-3 px-2">
-                          <span className="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">
-                            Selesai
-                          </span>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="space-y-4">
+                {getPendaftar().map((p) => {
+                  const tglDaftar = new Date(p.tanggalDaftar);
+                  const tglFormatted = tglDaftar.toLocaleDateString("id-ID", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  });
+
+                  const steps = [
+                    { label: "DAFTAR", selesai: true },
+                    { label: "VERIFIKASI", selesai: p.tahap1 },
+                    { label: "YUDISIUM", selesai: p.tahap2 },
+                    { label: "REGISTRASI", selesai: p.tahap3 },
+                  ];
+                  const semuaSelesai = steps.every((s) => s.selesai);
+                  const firstIncompleteIdx = steps.findIndex((s) => !s.selesai);
+                  const completedCount = steps.filter((s) => s.selesai).length;
+                  const progressPct = (completedCount / steps.length) * 100;
+
+                  const warnings = [
+                    null,
+                    {
+                      bg: "bg-[#E3F2FD]",
+                      border: "border-[#90CAF9]",
+                      iconBg: "bg-[#1E88E5]",
+                      iconColor: "text-[#0D47A1]",
+                      titleColor: "text-[#1565C0]",
+                      subtitle: "Dokumen Anda belum diverifikasi.",
+                      desc: "Silahkan upload berkas persyaratan yang diperlukan untuk melanjutkan proses seleksi. Pastikan semua dokumen telah lengkap dan sesuai dengan ketentuan yang berlaku.",
+                    },
+                    {
+                      bg: "bg-[#F3E5F5]",
+                      border: "border-[#CE93D8]",
+                      iconBg: "bg-[#8E24AA]",
+                      iconColor: "text-[#4A148C]",
+                      titleColor: "text-[#6A1B9A]",
+                      subtitle: "Proses yudisium belum dilakukan.",
+                      desc: "Silahkan menunggu pengumuman jadwal yudisium atau hubungi bagian akademik untuk informasi lebih lanjut mengenai jadwal dan persyaratan yudisium.",
+                    },
+                    {
+                      bg: "bg-[#E0F2F1]",
+                      border: "border-[#80CBC4]",
+                      iconBg: "bg-[#00897B]",
+                      iconColor: "text-[#004D40]",
+                      titleColor: "text-[#00695C]",
+                      subtitle: "Registrasi ulang belum dilakukan.",
+                      desc: "Silahkan lakukan pembayaran registrasi untuk menyelesaikan proses pendaftaran. Klik tombol Cetak untuk melihat instruksi pembayaran.",
+                    },
+                  ];
+                  const warning = firstIncompleteIdx > 0 ? warnings[firstIncompleteIdx] : null;
+
+                  function circleClass(i: number) {
+                    if (steps[i].selesai)
+                      return "w-12 h-12 rounded-full bg-[#fdc003] border-4 border-white flex items-center justify-center font-bold text-[#261a00] shadow-md";
+                    if (i === firstIncompleteIdx)
+                      return "w-12 h-12 rounded-full bg-[#e1e3e4] border-4 border-white flex items-center justify-center font-bold text-[#43474f] ring-4 ring-yellow-200/60";
+                    return "w-12 h-12 rounded-full bg-[#e1e3e4] border-4 border-white flex items-center justify-center font-bold text-[#43474f] opacity-40";
+                  }
+
+                  return (
+                    <div
+                      key={p.id}
+                      className="rounded-2xl border border-[#c3c6d1] overflow-hidden shadow-sm"
+                    >
+                      {/* Card Header */}
+                      <div className="bg-[#003366] px-8 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div>
+                          <p className="text-sm text-[#799dd6] font-medium">No. Pendaftaran</p>
+                          <h2 className="text-2xl font-bold text-white">
+                            #{p.noPendaftaran} - {p.jalur || "—"}
+                          </h2>
+                        </div>
+                        <span
+                          className={
+                            semuaSelesai
+                              ? "bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold w-fit"
+                              : "bg-[#ffdad6] text-[#93000a] px-4 py-2 rounded-full text-sm font-bold w-fit"
+                          }
+                        >
+                          {semuaSelesai ? "TERVERIFIKASI" : "BELUM DIVERIFIKASI"}
+                        </span>
+                      </div>
+
+                      {/* Warning per-step */}
+                      {warning && (
+                        <div className="px-8 pt-8">
+                          <div
+                            className={`${warning.bg} ${warning.border} rounded-2xl p-6 flex gap-4 items-start border`}
+                          >
+                            <div
+                              className={`w-12 h-12 rounded-xl ${warning.iconBg} flex items-center justify-center shrink-0`}
+                            >
+                              <AlertTriangle className={`w-6 h-6 ${warning.iconColor}`} />
+                            </div>
+                            <div className="space-y-2">
+                              <h3 className={`text-lg font-bold ${warning.titleColor}`}>
+                                PENTING!!
+                              </h3>
+                              <p className="text-[#ba1a1a] font-semibold">{warning.subtitle}</p>
+                              <p className="text-sm text-[#43474f] leading-relaxed">
+                                {warning.desc}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Stepper */}
+                      <div className="px-8 py-10 border-b border-[#c3c6d1]">
+                        <div className="relative flex justify-between max-w-4xl mx-auto">
+                          <div className="absolute top-6 left-0 w-full h-[2px] bg-[#c3c6d1]" />
+                          <div
+                            className="absolute top-6 left-0 h-[2px] bg-[#fdc003] transition-all"
+                            style={{ width: `${progressPct}%` }}
+                          />
+                          {steps.map((step, i) => (
+                            <div
+                              key={step.label}
+                              className="relative z-10 flex flex-col items-center gap-3"
+                            >
+                              <div className={circleClass(i)}>{i + 1}</div>
+                              <div className="text-center">
+                                <p
+                                  className={
+                                    step.selesai
+                                      ? "text-sm font-bold text-[#001e40]"
+                                      : "text-sm font-bold text-[#43474f]"
+                                  }
+                                >
+                                  {step.label}
+                                </p>
+                                <p
+                                  className={
+                                    step.selesai
+                                      ? "text-xs text-[#43474f]"
+                                      : "text-xs text-[#737780]"
+                                  }
+                                >
+                                  {step.selesai ? tglFormatted : "Belum"}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Detail */}
+                      <div className="p-8">
+                        <div className="mb-6">
+                          <h3 className="text-2xl font-bold text-[#001e40]">Detail Pendaftaran</h3>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+                          <div className="space-y-4">
+                            <div className="flex justify-between border-b border-[#c3c6d1] pb-3">
+                              <span className="text-sm text-[#43474f]">No. Pendaftaran</span>
+                              <span className="text-sm font-bold">{p.noPendaftaran}</span>
+                            </div>
+                            <div className="flex justify-between border-b border-[#c3c6d1] pb-3">
+                              <span className="text-sm text-[#43474f]">Jalur</span>
+                              <span className="text-sm font-bold">{p.jalur || "—"}</span>
+                            </div>
+                            <div className="flex justify-between border-b border-[#c3c6d1] pb-3">
+                              <span className="text-sm text-[#43474f]">Nama</span>
+                              <span className="text-sm font-bold">{p.nama}</span>
+                            </div>
+                            <div className="flex justify-between border-b border-[#c3c6d1] pb-3">
+                              <span className="text-sm text-[#43474f]">Tahun Akademik</span>
+                              <span className="text-sm font-bold">{p.tahunAkademik || "—"}</span>
+                            </div>
+                          </div>
+                          <div className="space-y-4">
+                            <div className="flex justify-between border-b border-[#c3c6d1] pb-3">
+                              <span className="text-sm text-[#43474f]">Gelombang</span>
+                              <span className="text-sm font-bold">{p.gelombang || "—"}</span>
+                            </div>
+                            <div className="flex justify-between border-b border-[#c3c6d1] pb-3">
+                              <span className="text-sm text-[#43474f]">Tahap</span>
+                              <span className="text-sm font-bold">{p.tahap || "—"}</span>
+                            </div>
+                            <div className="flex justify-between border-b border-[#c3c6d1] pb-3">
+                              <span className="text-sm text-[#43474f]">Program Studi 1</span>
+                              <span className="text-sm font-bold text-[#001e40]">
+                                {p.prodiPilihan1}
+                              </span>
+                            </div>
+                            <div className="flex justify-between border-b border-[#c3c6d1] pb-3">
+                              <span className="text-sm text-[#43474f]">Program Studi 2</span>
+                              <span className="text-sm font-bold text-[#001e40]">
+                                {p.prodiPilihan2}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className=" p-4 flex flex-wrap justify-end gap-2">
+                        <button className="px-6 py-3 text-sm rounded-xl border border-[#737780] bg-white hover:bg-gray-100 transition font-semibold">
+                          Edit Data
+                        </button>
+
+                        <button className="px-6 py-3 text-sm rounded-xl bg-[#fdc003] text-[#261a00] hover:opacity-90 transition font-semibold">
+                          Upload Berkas
+                        </button>
+
+                        <button className="px-6 py-3 text-sm rounded-xl bg-[#001e40] text-white hover:opacity-90 transition font-semibold">
+                          Tahap Selanjutnya
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             )}
           </section>
@@ -279,7 +432,6 @@ export default function Dashboard() {
 
         {/* RIGHT */}
         <div className="lg:col-span-4 space-y-6">
-
           {/* PROGRESS */}
           <div
             className="
@@ -290,15 +442,11 @@ export default function Dashboard() {
               shadow-sm
             "
           >
-            <h3 className="text-xl font-bold text-blue-900 mb-8">
-              Progress Pendaftaran
-            </h3>
+            <h3 className="text-xl font-bold text-blue-900 mb-8">Progress Pendaftaran</h3>
 
             <div className="space-y-8">
-
               {/* STEP */}
               <div className="flex gap-4">
-
                 <div className="flex flex-col items-center">
                   <div
                     className="
@@ -317,19 +465,14 @@ export default function Dashboard() {
                 </div>
 
                 <div>
-                  <h4 className="font-bold text-slate-800">
-                    Account Created
-                  </h4>
+                  <h4 className="font-bold text-slate-800">Account Created</h4>
 
-                  <p className="text-sm text-slate-500">
-                    Akun berhasil dibuat
-                  </p>
+                  <p className="text-sm text-slate-500">Akun berhasil dibuat</p>
                 </div>
               </div>
 
               {/* STEP */}
               <div className="flex gap-4">
-
                 <div className="flex flex-col items-center">
                   <div
                     className="
@@ -348,19 +491,14 @@ export default function Dashboard() {
                 </div>
 
                 <div>
-                  <h4 className="font-bold text-blue-900">
-                    Registration Form
-                  </h4>
+                  <h4 className="font-bold text-blue-900">Registration Form</h4>
 
-                  <p className="text-sm text-slate-500">
-                    Sedang mengisi formulir
-                  </p>
+                  <p className="text-sm text-slate-500">Sedang mengisi formulir</p>
                 </div>
               </div>
 
               {/* STEP */}
               <div className="flex gap-4 opacity-50">
-
                 <div className="flex flex-col items-center">
                   <div
                     className="
@@ -377,16 +515,11 @@ export default function Dashboard() {
                 </div>
 
                 <div>
-                  <h4 className="font-bold text-slate-500">
-                    Upload Berkas
-                  </h4>
+                  <h4 className="font-bold text-slate-500">Upload Berkas</h4>
 
-                  <p className="text-sm text-slate-400">
-                    Upload dokumen persyaratan
-                  </p>
+                  <p className="text-sm text-slate-400">Upload dokumen persyaratan</p>
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -400,7 +533,6 @@ export default function Dashboard() {
               shadow-xl
             "
           >
-
             <img
               src={Kampus}
               alt="Campus"
@@ -427,9 +559,7 @@ export default function Dashboard() {
                 text-white
               "
             >
-              <p className="text-sm text-yellow-300 mb-2 font-semibold">
-                CAMPUS NEWS
-              </p>
+              <p className="text-sm text-yellow-300 mb-2 font-semibold">CAMPUS NEWS</p>
 
               <h3 className="text-2xl font-bold mb-3 leading-tight">
                 Why Join Ahmad Dahlan University?
@@ -447,7 +577,6 @@ export default function Dashboard() {
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </main>

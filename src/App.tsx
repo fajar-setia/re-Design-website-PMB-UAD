@@ -23,6 +23,7 @@ import FormulirPendaftaran from "./page/AfterLogin/Form/index";
 import SyaratJalur from "./page/AfterLogin/Form/syarat";
 import Tahap3 from "./page/AfterLogin/Form/tahap3";
 
+
 function PendaftaranRoute() {
   const { isLoggedIn } = useAuth();
 
