@@ -17,11 +17,14 @@ import ProgramSarjana from "./page/AfterLogin/ProgramStudi/Sarjana/pilSarjana";
 import ProgramMagister from "./page/AfterLogin/ProgramStudi/Magister/pilMagister";
 import ProgramDoktor from "./page/AfterLogin/ProgramStudi/Doktor/pilDoktor";
 import ProgramProfesi from "./page/AfterLogin/ProgramStudi/Profesi/pilProfesi";
+import Internasional from "./page/AfterLogin/ProgramStudi/Internasional/pilInter";
 
 
 import FormulirPendaftaran from "./page/AfterLogin/Form/index";
 import SyaratJalur from "./page/AfterLogin/Form/syarat";
 import Tahap3 from "./page/AfterLogin/Form/tahap3";
+
+import LayananMaba from "./page/AfterLogin/service/ServiceMaba";
 
 
 function PendaftaranRoute() {
@@ -119,9 +122,13 @@ export default function App() {
             <Route path="/pil-magister" element={<ProgramMagister />} />
             <Route path="/pil-doktor" element={<ProgramDoktor />} />
             <Route path="/pil-profesi" element={<ProgramProfesi />} />
+            <Route path="/pil-internasional" element={<Internasional />} />
             <Route path="/form-pendaftaran" element={<FormulirPendaftaran />} />
             <Route path="/syarat" element={<SyaratJalur />} />
             <Route path="/upload-berkas" element={<Tahap3 />} />
+
+
+            <Route path="/layanan-maba" element={<LayananMaba />} />
           </Route>
         </Route>
       </Routes>

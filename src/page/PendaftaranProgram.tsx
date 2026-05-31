@@ -59,7 +59,7 @@ export default function PendaftaranProgram() {
       icon: Globe,
       accent: "bg-rose-500",
       status: "Pendaftaran Dibuka",
-      url: "#",
+      url: "/pil-internasional",
     },
     {
       title: "PROGRAM MBKM",

@@ -9,16 +9,16 @@ import {
   Megaphone,
   GraduationCap,
 } from "lucide-react";
+import { useState } from "react";
 
 type MobileDrawerProps = {
   open: boolean;
   onClose: () => void;
 };
 
-export default function MobileDrawer({
-  open,
-  onClose,
-}: MobileDrawerProps) {
+export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+
   const location = useLocation();
 
   const navLinks = [
@@ -31,6 +31,25 @@ export default function MobileDrawer({
       label: "Pendaftaran",
       to: "/pendaftaran",
       icon: <FileText size={18} />,
+    },
+    {
+      label: "Layanan",
+      to: "#",
+      icon: <BriefcaseBusiness size={18} />,
+      options: [
+        {
+          label: "Layanan Maba",
+          to: "/layanan-maba",
+        },
+        {
+          label: "Layanan MBKM",
+          to: "/layanan-mbkm",
+        },
+        {
+          label: "Layanan Alumni",
+          to: "/layanan-alumni",
+        },
+      ],
     },
     {
       label: "Upload Berkas",
@@ -57,11 +76,7 @@ export default function MobileDrawer({
         className={`
           fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm
           transition-opacity duration-300 md:hidden
-          ${
-            open
-              ? "opacity-100"
-              : "opacity-0 pointer-events-none"
-          }
+          ${open ? "opacity-100" : "opacity-0 pointer-events-none"}
         `}
       />
 
@@ -89,9 +104,7 @@ export default function MobileDrawer({
                 PMB UAD
               </h2>
 
-              <span className="text-[10px] text-slate-400 font-medium">
-                Online Admission
-              </span>
+              <span className="text-[10px] text-slate-400 font-medium">Online Admission</span>
             </div>
           </div>
 
@@ -116,6 +129,77 @@ export default function MobileDrawer({
           </p>
 
           {navLinks.map((link) => {
+            if (link.options) {
+              const isOpen = openMenu === link.label;
+
+              return (
+                <div
+                  key={link.label}
+                  className="
+                  rounded-xl
+                  overflow-hidden
+                "
+                >
+                  <button
+                    onClick={() => setOpenMenu(isOpen ? null : link.label)}
+                    className="
+                    w-full
+                    flex items-center justify-between
+                    px-3.5 py-3
+                    text-sm font-medium
+                    text-slate-600
+                    hover:bg-slate-50
+                    transition-all
+                  "
+                  >
+                    <div className="flex items-center gap-3">
+                      {link.icon}
+                      {link.label}
+                    </div>
+
+                    <ChevronRight
+                      size={16}
+                      className={`
+                      transition-transform duration-300
+                      ${isOpen ? "rotate-90" : ""}
+                    `}
+                    />
+                  </button>
+
+                  <div
+                    className={`
+                    overflow-hidden
+                    transition-all duration-300
+
+                    ${isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}
+                  `}
+                  >
+                    {link.options.map((item) => (
+                      <Link
+                        key={item.to}
+                        to={item.to}
+                        onClick={onClose}
+                        className="
+                        flex items-center
+                        pl-12 pr-4 py-3
+
+                        text-sm
+                        text-slate-500
+
+                        hover:bg-slate-50
+                        hover:text-blue-800
+
+                        transition-colors
+                      "
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+
             const isActive = location.pathname === link.to;
 
             return (
@@ -124,28 +208,21 @@ export default function MobileDrawer({
                 to={link.to}
                 onClick={onClose}
                 className={`
-                  flex items-center justify-between
-                  px-3.5 py-3 rounded-xl
-                  text-sm font-medium
-                  transition-all duration-200
-                  group
-                  ${
-                    isActive
-                      ? "bg-blue-50 text-blue-900 font-semibold"
-                      : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
-                  }
-                `}
+                flex items-center justify-between
+                px-3.5 py-3 rounded-xl
+                text-sm font-medium
+                transition-all duration-200
+                group
+
+                ${
+                  isActive
+                    ? "bg-blue-50 text-blue-900 font-semibold"
+                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                }
+              `}
               >
                 <div className="flex items-center gap-3">
-                  <span
-                    className={
-                      isActive
-                        ? "text-blue-900"
-                        : "text-slate-400 group-hover:text-slate-600"
-                    }
-                  >
-                    {link.icon}
-                  </span>
+                  <span className={isActive ? "text-blue-900" : "text-slate-400"}>{link.icon}</span>
 
                   {link.label}
                 </div>
@@ -153,20 +230,15 @@ export default function MobileDrawer({
                 <ChevronRight
                   size={14}
                   className={`
-                    transition-transform duration-200
-                    group-hover:translate-x-0.5
-                    ${
-                      isActive
-                        ? "text-blue-900"
-                        : "text-slate-400"
-                    }
-                  `}
+                  transition-transform duration-200
+                  group-hover:translate-x-0.5
+                  ${isActive ? "text-blue-900" : "text-slate-400"}
+                `}
                 />
               </Link>
             );
           })}
         </nav>
-        
       </div>
     </>
   );
