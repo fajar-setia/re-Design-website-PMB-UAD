@@ -1,9 +1,12 @@
 import {GraduationCap, Search } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 export default function GetIn() {
   const [searchQuery, setSearchQuery] = useState("");
+  const { isLoggedIn } = useAuth();
 
   const navigate = useNavigate();
 
@@ -157,7 +160,13 @@ export default function GetIn() {
 
                 <button 
                   className="rounded-lg bg-[#003366] py-2 text-xs font-bold uppercase text-white transition hover:opacity-90"
-                  onClick={() => navigate("/form-pendaftaran")}
+                  onClick={() => {
+                    if (!isLoggedIn) {
+                      toast.error("Silakan login terlebih dahulu untuk mendaftar");
+                      return;
+                    }
+                    navigate("/form-pendaftaran");
+                  }}
                 >
                   Daftar
                 </button>
@@ -214,7 +223,13 @@ export default function GetIn() {
 
                 <button 
                   className="rounded-lg bg-[#b08b00] py-2 text-xs font-bold uppercase text-white transition hover:opacity-90"
-                  onClick={() => navigate("/form-pendaftaran")}
+                  onClick={() => {
+                    if (!isLoggedIn) {
+                      toast.error("Silakan login terlebih dahulu untuk mendaftar");
+                      return;
+                    }
+                    navigate("/form-pendaftaran");
+                  }}
                 >
                   Daftar
                 </button>

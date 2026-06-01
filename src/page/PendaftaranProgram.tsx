@@ -10,10 +10,13 @@ import {
   ChevronRight,
   Search,
 } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 
 export default function PendaftaranProgram() {
   const [searchQuery, setSearchQuery] = useState("");
+  const { isLoggedIn } = useAuth();
 
   const programs = [
     {
@@ -118,7 +121,13 @@ export default function PendaftaranProgram() {
 
             return (
               <div
-                onClick={p.url ? () => window.location.href = p.url : undefined}
+                onClick={() => {
+                  if (!isLoggedIn) {
+                    toast.error("Silakan login terlebih dahulu untuk mendaftar");
+                    return;
+                  }
+                  if (p.url) window.location.href = p.url;
+                }}
                 key={i}
                 className="group relative bg-white/70 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2rem] p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-900/5 overflow-hidden"
               >
