@@ -91,10 +91,10 @@ export default function Register() {
         <div className="max-w-7xl mx-auto">
           <main className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="animate-[slideLeft_.5s_ease]">
-              <RegisterForm />
+              <AuthImage />
             </div>
             <div className="animate-[slideRight_.5s_ease]">
-              <AuthImage />
+              <RegisterForm />
             </div>
           </main>
           {/* Trust bar */}
