@@ -9,10 +9,8 @@ export default function AuthImage() {
           w-full
           max-w-xl
           h-[600px]
-
           rounded-2xl
           overflow-hidden
-
           shadow-2xl
         "
       >
