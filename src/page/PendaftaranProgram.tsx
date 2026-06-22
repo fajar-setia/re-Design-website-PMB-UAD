@@ -196,14 +196,14 @@ export default function PendaftaranProgram() {
             </div>
 
             {/* ── KANAN: Cards Bertumpuk (Fixed Layout) ── */}
-            <div className="relative hidden lg:block h-[320px]">
+            <div className="relative hidden lg:block h-[330px]">
               {/* Decorative shapes */}
               <div className="absolute right-0 top-0 w-40 h-40 bg-blue-900 rounded-[2rem] opacity-[0.04] rotate-12" />
               <div className="absolute right-8 bottom-4 w-20 h-20 bg-amber-400 rounded-xl opacity-[0.08] -rotate-6" />
 
               {/* Card 1 — Paling Diminati (atas kanan) */}
               <div className="absolute top-0 right-0 w-64 bg-blue-900 text-white rounded-2xl p-4 shadow-xl shadow-blue-900/20 z-20">
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center gap-4 mb-2">
                   <Flame className="w-4 h-4 text-amber-400" />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400">
                     Paling Diminati
@@ -229,7 +229,7 @@ export default function PendaftaranProgram() {
               </div>
 
               {/* Card 2 — Status Live (tengah kiri) */}
-              <div className="absolute top-[110px] left-0 w-56 bg-white border border-slate-100 rounded-2xl p-3.5 shadow-lg shadow-slate-200/50 z-30">
+              <div className="absolute top-[120px] left-0 w-56 bg-white border border-slate-100 rounded-2xl p-3.5 shadow-lg shadow-slate-200/50 z-30">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="relative">
                     <Radio className="w-4 h-4 text-emerald-500" />
@@ -253,7 +253,7 @@ export default function PendaftaranProgram() {
               </div>
 
               {/* Card 3 — Quote (bawah kanan) */}
-              <div className="absolute bottom-0 right-4 w-60 bg-amber-50 border border-amber-100 rounded-2xl p-4 z-10">
+              <div className="absolute bottom-0 right-2 w-60 bg-amber-50 border border-amber-100 rounded-2xl p-4 z-10">
                 <div className="text-2xl text-amber-300 font-serif leading-none mb-1">"</div>
                 <p className="text-sm text-slate-700 font-medium leading-relaxed italic">
                   Pendidikan adalah investasi terbaik yang tidak pernah bisa dicuri dari dirimu.
