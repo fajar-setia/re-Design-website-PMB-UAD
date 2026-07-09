@@ -1,4 +1,5 @@
 import Logo from '../../../assets/LogoUAD.webp';
+import LogoPng from '../../../assets/LogoUAD.png';
 import ProfileMenu from './ProfileMenu';
 export default function TopNavbar() {
   const storedUser = localStorage.getItem("user");
@@ -13,7 +14,7 @@ export default function TopNavbar() {
 
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full bg-white text-blue-900 flex items-center justify-center font-bold">
-            <img src={Logo} alt="Logo UAD" />
+            <img src={LogoPng} alt="Logo UAD" />
           </div>
 
           <div>

@@ -1,4 +1,5 @@
-import LogoWebp from "../../assets/LogoUAD.webp";
+// import LogoWebp from "../../assets/LogoUAD.webp";
+import LogoPng from "../../assets/LogoUAD.png";
 export default function TopNavbar() {
   return (
     <div className="bg-blue-800 text-white">
@@ -10,12 +11,12 @@ export default function TopNavbar() {
 
           <div className="w-12 h-12 rounded-full bg-white text-blue-900 flex items-center justify-center font-bold">
             <img
-              src={LogoWebp}
+              src={LogoPng}
               alt="Logo UAD"
               className="w-full h-full object-contain"
-              width={48}
-              height={48}
-              fetchPriority="high"
+              // width={48}
+              // height={48}
+              // fetchPriority="high"
             />
           </div>
 

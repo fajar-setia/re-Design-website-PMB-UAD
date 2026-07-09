@@ -9,7 +9,8 @@ import {
   Shield,
 } from "lucide-react";
 
-import LogoUad from "../assets/LogoUAD.webp";
+//import LogoUad from "../assets/LogoUAD.webp";
+import LogoUadPng from "../assets/LogoUAD.png";
 
 export default function Footer() {
   const campuses = [
@@ -48,7 +49,7 @@ export default function Footer() {
             {/* Logo pill */}
             <div className="inline-flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-blue-900 font-bold text-xs shrink-0">
-                <img src={LogoUad} alt="Logo UAD" />
+                <img src={LogoUadPng} alt="Logo UAD" />
               </div>
               <span className="font-bold text-white text-sm leading-tight">
                 Universitas<br />Ahmad Dahlan
