@@ -531,12 +531,12 @@ export default function Dashboard() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20" />
             <div className="absolute bottom-0 p-6 text-white">
-              <p className="text-sm text-yellow-300 mb-2 font-semibold">CAMPUS NEWS</p>
-              <h3 className="text-2xl font-bold mb-3 leading-tight">
-                Why Join Ahmad Dahlan University?
+              <p className="text-sm text-yellow-300 mb-2 font-semibold">Kampus Baru</p>
+              <h3 className="text-l font-bold mb-3 leading-tight">
+                Kenapa bergabung dengan Universitas Ahmad Dahlan?
               </h3>
               <button className="mt-2 text-sm font-semibold hover:underline">
-                Read More →
+                lihat selengkapnya →
               </button>
             </div>
           </div>
