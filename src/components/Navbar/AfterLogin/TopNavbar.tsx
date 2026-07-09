@@ -1,4 +1,4 @@
-import Logo from '../../../assets/LogoUAD.png';
+import Logo from '../../../assets/LogoUAD.webp';
 import ProfileMenu from './ProfileMenu';
 export default function TopNavbar() {
   const storedUser = localStorage.getItem("user");

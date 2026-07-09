@@ -1,4 +1,4 @@
-import { GraduationCap, Search, Clock, Users, BookOpen, ChevronDown, Sparkles, Calendar, ArrowRight } from "lucide-react";
+import { GraduationCap, Search, Clock, Users, ChevronDown, Sparkles, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -40,12 +40,7 @@ export default function GetIn() {
   }, []);
 
   /* ── Stats animasi ── */
-  const stats = [
-    { icon: BookOpen, label: "Program Studi", value: "42+", color: "text-yellow-300" },
-    { icon: Users, label: "Jalur Masuk", value: "12", color: "text-blue-200" },
-    { icon: Calendar, label: "Gelombang", value: "3", color: "text-green-300" },
-    { icon: Sparkles, label: "Pendaftar", value: "1,240", color: "text-pink-200" },
-  ];
+
 
   const sarjanaPrograms: SarjanaProgram[] = [
     {

@@ -1,4 +1,4 @@
-import ContentLogin from "../../assets/content/contentLogin.png";
+import ContentLoginWebp from "../../assets/content/contentLogin.webp";
 
 export default function AuthImage() {
   return (
@@ -15,12 +15,13 @@ export default function AuthImage() {
         "
       >
         <img
-          src={ContentLogin}
+          src={ContentLoginWebp}
           alt="Campus"
           className="
             absolute inset-0
             w-full h-full
             object-cover
+            lazyload
           "
         />
       </div>

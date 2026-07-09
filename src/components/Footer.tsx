@@ -9,7 +9,7 @@ import {
   Shield,
 } from "lucide-react";
 
-import LogoUad from "../assets/LogoUAD.png"
+import LogoUad from "../assets/LogoUAD.webp";
 
 export default function Footer() {
   const campuses = [
